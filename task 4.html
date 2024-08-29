@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+			display:grid;
+			justify-content:center;
+        }
+		.container
+		{
+		display:grid;
+		text-align:center;
+		height:500px;
+		width:500px;
+		border-radius:50px;
+		background-color:black;
+		grid-template-rows:repeat(6,1fr);
+		grid-template-columns:repeat(4,1fr);
+		row-gap:10px;
+		column-gap:10px;
+		}
+		.row
+		{
+		font-size:2em;
+		border:transparent;
+		border-radius:100px;
+		background-color:#313632;
+		color:white;
+		cursor:pointer;
+		}
+		.item1
+		{
+		text-align:right;
+		grid-column-start:1;
+		grid-column-end:5;
+		}
+		.item2
+		{
+		grid-column-start:1;
+		grid-column-end:3;
+		background-color:grey;
+		color:black;
+		}
+		.row:hover
+		{
+		background-color:white;
+		color:black;
+		}
+		.item1:hover
+		{
+		background-color:#313632;
+		}
+    </style>
+</head>
+<body>
+<form name="get">
+    <h1>Welcome to calculate me!</h1>
+	<div class="container">
+		<input type="text" placeholder="enter" class="row item1" name="abc">
+		<input type="button" class="row item2" onclick="get.abc.value=' '" value="C">
+		<input type="button" class="row" style="background-color:grey;color:black;" onclick="get.abc.value+='%'" value="%">
+		<input type="button" class="row" style="background-color:orange;" onclick="get.abc.value+='/'" value="/">
+		<input type="button" class="row" onclick="get.abc.value+=7" value="7">
+		<input type="button" class="row" onclick="get.abc.value+=8" value="8">
+		<input type="button" class="row" onclick="get.abc.value+=9" value="9">
+		<input type="button" class="row" style="background-color:orange;" onclick="get.abc.value+='*'" value="X">
+		<input type="button" class="row" onclick="get.abc.value+=4" value="4">
+		<input type="button" class="row" onclick="get.abc.value+=5" value="5">
+		<input type="button" class="row" onclick="get.abc.value+=6" value="6">
+		<input type="button" class="row" style="background-color:orange;" onclick="get.abc.value+='-'" value="-">
+		<input type="button" class="row" onclick="get.abc.value+=1" value="1">
+		<input type="button" class="row" onclick="get.abc.value+=2" value="2">
+		<input type="button" class="row" onclick="get.abc.value+=3" value="3">
+		<input type="button" class="row" style="background-color:orange;" onclick="get.abc.value+='+'" value="+">
+		<input type="button" class="row" onclick="get.abc.value+='00'" value="00">
+		<input type="button" class="row" onclick="get.abc.value+=0" value="0">
+		<input type="button" class="row" onclick="get.abc.value+='.'" value=".">
+		<input type="button" class="row" style="background-color:orange;" onclick="get.abc.value=eval(get.abc.value)" value="=">
+	</div>	
+</form>
+</body>
+</html>
